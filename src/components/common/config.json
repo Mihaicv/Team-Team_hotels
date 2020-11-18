@@ -1,0 +1,11 @@
+{
+    "apiEndpoint" : "https://hotels-com-free.p.rapidapi.com/nice/image-catalog/v2/hotels/106346",
+    "headers": { "headers" : {
+        "x-rapidapi-key":
+          "59af063256mshff686147ba08b9bp11b97ejsn285e58e819e4",
+        "x-rapidapi-host": "hotels-com-free.p.rapidapi.com",
+        "useQueryString": true
+      }}
+}
+
+
