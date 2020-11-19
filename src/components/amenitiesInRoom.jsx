@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import http from './common/httpService';
 import configDetails from './common/configDetails.json';
 
-export default function AmenitiesInHotel(props) {
+export default function AmenitiesInRoom(props) {
   let params = useParams();
   console.log(params);
   const [listAmenities, setListAmenities] = useState([]);
@@ -17,8 +17,8 @@ export default function AmenitiesInHotel(props) {
 
     async function getDetail() {
       const result = await http.get(configDetails.apiEndpoint, data);
-      let obj = result.data.data.body.amenities[0].listItems[0];
-      console.log(result.data.data.body.amenities[0].listItems[0]);
+      let obj = result.data.data.body.amenities[0].listItems[1];
+      console.log(result.data.data.body.amenities[0].listItems[1]);
 
       setListAmenities(obj);
     }

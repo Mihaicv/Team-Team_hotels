@@ -38,7 +38,7 @@ function HotelDetails() {
           {detailsHotel.map((del) => (
             <tr key={del.heading}>
               <td>
-               <Link to={'/amenities/'+del.heading+"/"+del.listItems} > <h3>{del.heading}</h3></Link>
+               <Link to={`/amenities/${del.heading}`} > <h3>{del.heading}</h3></Link>
              
               </td>
             </tr>
