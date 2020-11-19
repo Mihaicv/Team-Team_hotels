@@ -17,7 +17,7 @@ export default function AmenitiesInRoom(props) {
         configDetails.apiEndpoint + props.match.params.id,
         data
       );
-      let obj = result.data.data.body.amenities[1].listItems[1];
+      let obj = result.data.data.body.amenities[1].listItems[0];
 
       setListAmenities(obj);
     }
