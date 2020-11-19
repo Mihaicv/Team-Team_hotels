@@ -4,7 +4,7 @@ export default function Input(props) {
   let params = props;
 
   return (
-    <div className="form-group input-box">
+    <div className="form-group">
       <label htmlFor={params.name}>{params.label}</label>
       <input
         value={params.value}
@@ -17,7 +17,6 @@ export default function Input(props) {
         aria-describedby="searchHelp"
         placeholder="Search city"
       />
-      <i class="fa fa-search icon"></i>
     </div>
   );
 }

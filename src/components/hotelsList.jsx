@@ -31,8 +31,8 @@ function HotelsList(props) {
 
   return (
     <div className="container">
-      {" "}
-      Popuplar destinations in {country}
+     <h3>popuplar destinations in {country}</h3>
+      
       {hotelsList.map((hotel) => (
         <div className="row" key={hotel.destinationId}>
           <div className="col-sm">

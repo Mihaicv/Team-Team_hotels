@@ -18,7 +18,6 @@ export default function Search(props) {
       <form onSubmit={handleSubmit} {...props}>
         <Input name="search" value={searchArgument} onChange={handleChange} />
         <small id="emailHelp" className="form-text text-muted"></small>
-        <button type="submit" className="btn btn-primary"></button>
       </form>
     </div>
   );
