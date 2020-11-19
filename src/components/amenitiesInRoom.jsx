@@ -1,11 +1,9 @@
-/* eslint-disable array-callback-return */
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import http from './common/httpService';
-import configDetails from './common/configDetails.json';
+import React, { useEffect, useState } from "react";
+
+import http from "./common/httpService";
+import configDetails from "./common/configDetails.json";
 
 export default function AmenitiesInRoom(props) {
-  console.log(props);
   const [listAmenities, setListAmenities] = useState([]);
 
   useEffect(() => {
@@ -15,9 +13,11 @@ export default function AmenitiesInRoom(props) {
     };
 
     async function getDetail() {
-      const result = await http.get(configDetails.apiEndpoint+props.match.params.id, data);
-      let obj = result.data.data.body.amenities[1].listItems[0];
-    
+      const result = await http.get(
+        configDetails.apiEndpoint + props.match.params.id,
+        data
+      );
+      let obj = result.data.data.body.amenities[1].listItems[1];
 
       setListAmenities(obj);
     }

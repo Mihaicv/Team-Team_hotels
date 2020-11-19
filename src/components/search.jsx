@@ -14,20 +14,10 @@ export default function Search(props) {
   };
 
   return (
-    <div>
+    <div id="search-form">
       <form onSubmit={handleSubmit} {...props}>
-        <Input
-          name="search"
-          value={searchArgument}
-          label="Search"
-          onChange={handleChange}
-        />
-        <small id="emailHelp" className="form-text text-muted">
-          Search for hotels
-        </small>
-        <button type="submit" className="btn btn-primary">
-          Search
-        </button>
+        <Input name="search" value={searchArgument} onChange={handleChange} />
+        <small id="emailHelp" className="form-text text-muted"></small>
       </form>
     </div>
   );

@@ -1,5 +1,4 @@
-import React, { onChange } from "react";
-// import { useParams } from "react-router-dom";
+import React from "react";
 
 export default function Input(props) {
   let params = props;

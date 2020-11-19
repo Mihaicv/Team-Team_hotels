@@ -1,11 +1,11 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
-        Team-Team Hotels.com
+        Team-Team <strong>Hotels.com</strong>
       </Link>
       <button
         className="navbar-toggler"
@@ -23,20 +23,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-
-
-<div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/hotels">
-              Hotels
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/search">
-              Search
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-
