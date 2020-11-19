@@ -1,22 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import http from './common/httpService';
-import config from './common/config.json';
-import { Link } from 'react-router-dom';
-import Hotel from './hotel';
+import React, { useEffect, useState } from "react";
+import http from "./common/httpService";
+import config from "./common/config.json";
+import { Link } from "react-router-dom";
 
 function HotelsList(props) {
   const [hotelsList, setHotelsList] = useState([]);
-  const [imageSize, setImageSize] = useState(['d']);
+  const [imageSize, setImageSize] = useState(["d"]);
+  let country = props.match.params.country;
+
+  let data = {
+    headers: config.headers.headers,
+    params: config.query.query,
+  };
+
+  data.params.query = country;
 
   useEffect(() => {
-    let data = {
-      headers: config.headers.headers,
-      params: config.query.query,
-    };
-
     async function getHotelsList() {
       const result = await http.get(
-        config.apiEndpoint + '/suggest/v1.7/json',
+        config.apiEndpoint + "/suggest/v1.7/json",
         data
       );
       let obj = await result;
@@ -28,28 +30,23 @@ function HotelsList(props) {
   }, [hotelsList, imageSize]);
 
   return (
-    <div>
-      <table className='table'>
-        <thead>
-          <tr>
-            <th>Hotel</th>
-          </tr>
-        </thead>
-        <tbody>
-          {hotelsList.map((hotel) => (
-            <tr key={hotel.destinationId}>
-              <td>
-                <h2>hotel</h2>
-                <Link to={`/hotel/${hotel.destinationId}`} {...props}>
-                  <span id={hotel.destinationId} {...props}>
-                    Hotel - {hotel.destinationId}
-                  </span>
-                </Link>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="container">
+      {" "}
+      Popuplar destinations in {country}
+      {hotelsList.map((hotel) => (
+        <div className="row" key={hotel.destinationId}>
+          <div className="col-sm">
+            <Link
+              to={`/search/${country}/${hotel.destinationId}/${hotel.name}`}
+              {...props}
+            >
+              <span id={hotel.destinationId} hotelName={hotel.name} {...props}>
+                {hotel.name}
+              </span>
+            </Link>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

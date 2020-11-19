@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import HotelImages from './hotelImages';
-import { Link } from 'react-router-dom';
-import GuestReviewOverview from './guestReviewOverview';
+import React from "react";
+import { Link, useParams } from "react-router-dom";
+import HotelImages from "./hotelImages";
 
 function Hotel(props) {
   let params = useParams();
@@ -10,13 +8,26 @@ function Hotel(props) {
   return (
     <div>
       <div>
-        <h1>Hotel Images - {params.id} </h1>
-        <Link to={`/reviews/${params.id}`}>Reviews</Link>
-        <Link to={`/ratings/${params.id}`}>Hotel ratings</Link>
-        <HotelImages {...params.id} />
+        <Link to={`/detail/${params.id}`}>
+          <h5>Details</h5>
+        </Link>
+        <Link to={`/reviews/${params.id}`}>
+          <h5>Reviews</h5>
+        </Link>
       </div>
       <div>
-        <h2>Details</h2>
+        <h3>{params.hotelName}</h3>
+
+        <td>
+          <Link to={`/ratings/${params.id}`}>Hotel ratings</Link>
+        </td>
+        <td>
+          <Link to={`/reviews/${params.id}`}></Link>
+        </td>
+        <td>
+          <Link to={`/detail/${params.id}`}></Link>
+        </td>
+        <HotelImages {...params} />
       </div>
     </div>
   );

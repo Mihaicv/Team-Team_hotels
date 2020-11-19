@@ -18,22 +18,23 @@ const NavBar = () => {
       >
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/hotels">
-              Hotels
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/search">
-              Search
-            </NavLink>
-          </li>
-        </ul>
-      </div>
     </nav>
   );
 };
 
 export default NavBar;
+
+<div className="collapse navbar-collapse" id="navbarNav">
+  <ul className="navbar-nav">
+    <li className="nav-item">
+      <NavLink className="nav-link" to="/hotels">
+        Hotels
+      </NavLink>
+    </li>
+    <li className="nav-item">
+      <NavLink className="nav-link" to="/search">
+        Search
+      </NavLink>
+    </li>
+  </ul>
+</div>;

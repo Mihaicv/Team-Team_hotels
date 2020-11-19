@@ -2,7 +2,7 @@
   "apiEndpoint": "https://hotels-com-free.p.rapidapi.com/mobile_service/property-content/v1/hotels.com/property",
   "headers": {
     "headers": {
-      "x-rapidapi-key": "79b1b98b31mshfd737a1d12c2746p1adef1jsnc95f1ee19331",
+      "x-rapidapi-key": "59af063256mshff686147ba08b9bp11b97ejsn285e58e819e4",
       "x-rapidapi-host": "hotels-com-free.p.rapidapi.com",
       "useQueryString": true
     }

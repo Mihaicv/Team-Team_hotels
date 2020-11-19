@@ -1,0 +1,20 @@
+{
+  "apiEndpoint": "https://hotels-com-free.p.rapidapi.com/pde/property-details/v1/hotels.com/",
+  "headers": {
+    "headers": {
+      "x-rapidapi-key": "59af063256mshff686147ba08b9bp11b97ejsn285e58e819e4",
+      "x-rapidapi-host": "hotels-com-free.p.rapidapi.com",
+      "useQueryString": true
+    }
+  },
+  "query": {
+    "query": {
+      "checkIn": "2021-01-27",
+      "locale": "en_US",
+      "rooms": "1",
+      "checkOut": "2021-01-28",
+      "currency": "USD",
+      "include": "neighborhood"
+    }
+  }
+}

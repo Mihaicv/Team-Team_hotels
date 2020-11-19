@@ -1,39 +1,46 @@
-import React, { useState } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
-import NavBar from './components/navbar';
-import './App.css';
-import 'react-toastify/dist/ReactToastify.css';
-import NotFound from './components/notFound';
-import Hotel from './components/hotel';
-import HotelsList from './components/hotelsList';
-// import HotelImages from "./components/hotelImages";
-// import HotelsPage from "./components/context/hotelsPage";
-// import HotelContext from "./components/context/hotelContext";
-import Reviews from './components/reviews';
-import GuestReviewOverview from './components/guestReviewOverview';
+import React from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import HotelsSuggestions from "./components/hotelSuggestions";
+import HotelDetails from "./components/hotelDetails";
+import AmenitiesInHotel from "./components/amenities";
+import AmenitiesInRoom from "./components/amenitiesInRoom";
+import NavBar from "./components/navbar";
+import NotFound from "./components/notFound";
+import Hotel from "./components/hotel";
+import HotelsList from "./components/hotelsList";
+import Search from "./components/search";
+import Reviews from "./components/reviews";
+import GuestReviewOverview from "./components/guestReviewOverview";
+import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
-  const [currentHotelId, setCurrentHotel] = useState([]);
-
-  function handleSetCurrentHotelId(id) {
-    setCurrentHotel(id);
-  }
-
   return (
     <React.Fragment>
       <ToastContainer />
       <NavBar />
-      <main className='container'>
+
+      <main className="container">
         <Switch>
-          <Route path='/hotel/:id' component={Hotel} />
-          <Route path='/reviews/:id' component={Reviews} />
-          <Route path='/ratings/:id' component={GuestReviewOverview} />
-          {/* <Route path="/search" component={Search} /> */}
-          <Route path='/hotels' component={HotelsList} />
-          <Route path='/not-found' component={NotFound} />
-          <Redirect from='/' exact to='/context' />
-          <Redirect to='/not-found' />
+          <Route path="/suggestions" component={HotelsSuggestions} />
+          <Route path="/detail/:id" component={HotelDetails} />
+          <Route path="/reviews/:id" component={Reviews} />
+          <Route path="/ratings/:id" component={GuestReviewOverview} />
+          <Route
+            path="/amenities/In the hotel/:id"
+            component={AmenitiesInHotel}
+          />
+          <Route
+            path="/amenities/In the room/:id"
+            component={AmenitiesInRoom}
+          />
+          <Route path="/search/:country/:id/:hotelName" component={Hotel} />
+          <Route path="/search/:country" component={HotelsList} />
+          <Route path="/search" component={Search} />
+          <Route path="/not-found" component={NotFound} />
+          <Redirect from="/" exact to="/search" />
+          <Redirect to="/not-found" />
         </Switch>
       </main>
     </React.Fragment>
