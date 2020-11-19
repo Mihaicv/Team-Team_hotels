@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import http from "./common/httpService";
-import config from "./common/config.json";
-import { Link } from "react-router-dom";
-import Hotel from "./hotel";
+import React, { useEffect, useState } from 'react';
+import http from './common/httpService';
+import config from './common/config.json';
+import { Link } from 'react-router-dom';
+import Hotel from './hotel';
 
 function HotelsList(props) {
   const [hotelsList, setHotelsList] = useState([]);
-  const [imageSize, setImageSize] = useState(["d"]);
+  const [imageSize, setImageSize] = useState(['d']);
 
   useEffect(() => {
     let data = {
@@ -16,7 +16,7 @@ function HotelsList(props) {
 
     async function getHotelsList() {
       const result = await http.get(
-        config.apiEndpoint + "/suggest/v1.7/json",
+        config.apiEndpoint + '/suggest/v1.7/json',
         data
       );
       let obj = await result;
@@ -29,7 +29,7 @@ function HotelsList(props) {
 
   return (
     <div>
-      <table className="table">
+      <table className='table'>
         <thead>
           <tr>
             <th>Hotel</th>

@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import HotelImages from './hotelImages';
+import { Link } from 'react-router-dom';
+import GuestReviewOverview from './guestReviewOverview';
 
-import HotelImages from "./hotelImages";
-
-function Hotel() {
+function Hotel(props) {
   let params = useParams();
 
-  console.log(params.id + " in hotel");
   return (
     <div>
       <div>
         <h1>Hotel Images - {params.id} </h1>
+        <Link to={`/reviews/${params.id}`}>Reviews</Link>
+        <Link to={`/ratings/${params.id}`}>Hotel ratings</Link>
         <HotelImages {...params.id} />
       </div>
       <div>
