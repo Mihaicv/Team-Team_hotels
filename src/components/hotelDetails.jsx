@@ -4,7 +4,9 @@ import configDetails from './common/configDetails.json';
 import { Link } from 'react-router-dom';
 import Amenities from './amenities';
 
-function HotelDetails() {
+function HotelDetails(props) {
+
+  console.log(props.match.params.id);
   const [detailsHotel, setDetailsHotel] = useState([]);
 
   useEffect(() => {
@@ -14,7 +16,7 @@ function HotelDetails() {
     };
 
     async function getDetailHotel() {
-      const result = await http.get(configDetails.apiEndpoint, data);
+      const result = await http.get(configDetails.apiEndpoint+props.match.params.id, data);
       let obj = result.data.data.body.amenities;
       // console.log(result.data.data.body.amenities);
      
@@ -38,7 +40,7 @@ function HotelDetails() {
           {detailsHotel.map((del) => (
             <tr key={del.heading}>
               <td>
-               <Link to={`/amenities/${del.heading}`} > <h3>{del.heading}</h3></Link>
+               <Link to={`/amenities/${del.heading}/${props.match.params.id}`} > <h3>{del.heading}</h3></Link>
              
               </td>
             </tr>

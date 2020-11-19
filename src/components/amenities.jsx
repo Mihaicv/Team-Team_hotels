@@ -5,8 +5,6 @@ import http from './common/httpService';
 import configDetails from './common/configDetails.json';
 
 export default function AmenitiesInHotel(props) {
-  let params = useParams();
-  console.log(params);
   const [listAmenities, setListAmenities] = useState([]);
 
   useEffect(() => {
@@ -16,9 +14,9 @@ export default function AmenitiesInHotel(props) {
     };
 
     async function getDetail() {
-      const result = await http.get(configDetails.apiEndpoint, data);
+      const result = await http.get(configDetails.apiEndpoint+props.match.params.id, data);
       let obj = result.data.data.body.amenities[0].listItems[0];
-      console.log(result.data.data.body.amenities[0].listItems[0]);
+      // console.log(result.data.data.body.amenities[0].listItems[0]);
 
       setListAmenities(obj);
     }
@@ -31,7 +29,7 @@ export default function AmenitiesInHotel(props) {
       <table className='table'>
         <thead>
           <tr>
-            <th>Amenities </th>
+            <th>Amenities {listAmenities.heading} </th>
           </tr>
         </thead>
 

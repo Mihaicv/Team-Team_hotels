@@ -1,5 +1,5 @@
 {
-  "apiEndpoint": "https://hotels-com-free.p.rapidapi.com/pde/property-details/v1/hotels.com/106346",
+  "apiEndpoint": "https://hotels-com-free.p.rapidapi.com/pde/property-details/v1/hotels.com/",
   "headers": {
     "headers": {
       "x-rapidapi-key": "59af063256mshff686147ba08b9bp11b97ejsn285e58e819e4",
