@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 
 import HotelImages from "./hotelImages";
@@ -6,7 +6,6 @@ import HotelImages from "./hotelImages";
 function Hotel() {
   let params = useParams();
 
-  console.log(params.id + " in hotel");
   return (
     <div>
       <div>

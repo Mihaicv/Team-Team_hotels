@@ -2,18 +2,20 @@ import React, { useEffect, useState } from "react";
 import http from "./common/httpService";
 import config from "./common/config.json";
 import { Link } from "react-router-dom";
-import Hotel from "./hotel";
 
 function HotelsList(props) {
   const [hotelsList, setHotelsList] = useState([]);
   const [imageSize, setImageSize] = useState(["d"]);
+  let country = props.match.params.country;
+
+  let data = {
+    headers: config.headers.headers,
+    params: config.query.query,
+  };
+
+  data.params.query = country;
 
   useEffect(() => {
-    let data = {
-      headers: config.headers.headers,
-      params: config.query.query,
-    };
-
     async function getHotelsList() {
       const result = await http.get(
         config.apiEndpoint + "/suggest/v1.7/json",
@@ -40,7 +42,10 @@ function HotelsList(props) {
             <tr key={hotel.destinationId}>
               <td>
                 <h2>hotel</h2>
-                <Link to={`/hotel/${hotel.destinationId}`} {...props}>
+                <Link
+                  to={`/hotels/${props.match.params.country}/${hotel.destinationId}`}
+                  {...props}
+                >
                   <span id={hotel.destinationId} {...props}>
                     Hotel - {hotel.destinationId}
                   </span>

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import http from "./common/httpService";
 import config from "./common/config.json";
-import Hotel from "./hotel";
 import ImageComponent from "./imageComponent";
 import { useParams } from "react-router-dom";
 
