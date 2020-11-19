@@ -1,19 +1,17 @@
-import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
-import { ToastContainer } from 'react-toastify';
-import './App.css';
-import 'react-toastify/dist/ReactToastify.css';
-import HotelsSuggestions from './components/hotelSuggestions';
-import HotelDetails from './components/hotelDetails';
-import AmenitiesInHotel from './components/amenities';
-import AmenitiesInRoom from './components/amenitiesInRoom';
+import React from "react";
+import { Route, Switch, Redirect } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "./App.css";
+import "react-toastify/dist/ReactToastify.css";
+import HotelsSuggestions from "./components/hotelSuggestions";
+import HotelDetails from "./components/hotelDetails";
+import AmenitiesInHotel from "./components/amenities";
+import AmenitiesInRoom from "./components/amenitiesInRoom";
 import NavBar from "./components/navbar";
 import NotFound from "./components/notFound";
 import Hotel from "./components/hotel";
 import HotelsList from "./components/hotelsList";
 import Search from "./components/search";
-
-
 
 function App() {
   return (
@@ -21,12 +19,18 @@ function App() {
       <ToastContainer />
       <NavBar />
 
-      <main className='container'>
+      <main className="container">
         <Switch>
-          <Route path='/suggestions' component={HotelsSuggestions} />
-          <Route path='/detail/:id' component={HotelDetails} />
-          <Route path='/amenities/In the hotel/:id' component={AmenitiesInHotel} />
-          <Route path='/amenities/In the room/:id' component={AmenitiesInRoom} />
+          <Route path="/suggestions" component={HotelsSuggestions} />
+          <Route path="/detail/:id" component={HotelDetails} />
+          <Route
+            path="/amenities/In the hotel/:id"
+            component={AmenitiesInHotel}
+          />
+          <Route
+            path="/amenities/In the room/:id"
+            component={AmenitiesInRoom}
+          />
           <Route path="/search/:country/:id/:hotelName" component={Hotel} />
           <Route path="/search/:country" component={HotelsList} />
           <Route path="/search" component={Search} />
