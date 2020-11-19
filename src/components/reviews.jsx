@@ -29,8 +29,8 @@ const Reviews = (props) => {
   }, [reviews, id]);
 
   return (
-    <div>
-      <p>Reviews</p>
+    <div className='jumbotron'>
+      <h2 >Reviews</h2>
       {reviews.map((r, i) => (
         <ul key={i}>{r.summary}</ul>
       ))}

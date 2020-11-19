@@ -28,15 +28,15 @@ function HotelDetails(props) {
   return (
     <div>
       <table className="table">
-        <thead>
+        <thead className="thead-dark">
           <tr>
             <th>Amenities</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody  className="list-group">
           {detailsHotel.map((del) => (
             <tr key={del.heading}>
-              <td>
+              <td >
                <Link to={`/amenities/${del.heading.split(" ")[2]}/${props.match.params.id}`} > <h3>{del.heading}</h3></Link>
              
               </td>

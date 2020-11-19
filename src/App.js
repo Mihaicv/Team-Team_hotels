@@ -25,6 +25,8 @@ function App() {
         <Switch>
           <Route path='/suggestions' component={HotelsSuggestions} />
           <Route path='/detail/:id' component={HotelDetails} />
+          <Route path="/reviews/:id" component={Reviews} />
+          <Route path="/ratings/:id" component={GuestReviewOverview} />
           <Route path='/amenities/hotel/:id' component={AmenitiesInHotel} />
           <Route path='/amenities/room/:id' component={AmenitiesInRoom} />
           <Route path='/search/:country/:id/:hotelName' component={Hotel} />

@@ -29,14 +29,30 @@ const GuestReviewOverview = (props) => {
   }, [guestReviewOverview, id]);
 
   return (
-    <div>
-      <p>Cleanliness {guestReviewOverview.cleanliness}</p>
-      <p>Hotel Condition {guestReviewOverview.formattedHotelCondition}</p>
-      <p>Hotel Service {guestReviewOverview.formattedHotelService}</p>
-      <p>Neighbourhood {guestReviewOverview.formattedNeighbourhood}</p>
-      <p>Overall {guestReviewOverview.formattedOverall}</p>
-      <p>RoomComfort {guestReviewOverview.formattedRoomComfort}</p>
-    </div>
+    <div className='jumbotron'>
+      <table className='table'>
+      <thead className="thead-dark">
+          <tr>
+            <th>Notes </th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+          <tbody >
+          <tr ><br/>
+              <tr style={{borderBottomStyle: "solid"}}>Cleanliness {guestReviewOverview.cleanliness}</tr><br/> 
+              <tr style={{borderBottomStyle: "solid"}}>Hotel Condition {guestReviewOverview.formattedHotelCondition}</tr><br/>
+              <tr style={{borderBottomStyle: "solid"}}>Hotel Service {guestReviewOverview.formattedHotelService}</tr><br/>
+              <tr style={{borderBottomStyle: "solid"}}>Neighbourhood {guestReviewOverview.formattedNeighbourhood}</tr><br/>
+              <tr style={{borderBottomStyle: "solid"}}>Overall {guestReviewOverview.formattedOverall}</tr><br/>
+              <tr style={{borderBottomStyle: "solid"}}>RoomComfort {guestReviewOverview.formattedRoomComfort}</tr><br/>
+              </tr>
+          </tbody>
+      </table>
+     </div>
   );
 };
 

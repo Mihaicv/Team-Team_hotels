@@ -32,7 +32,7 @@ function HotelsList(props) {
   return (
     <div className="jumbotron">
       {" "}
-      Popular destinations in {country}
+     <h2> Popular destinations in {country}</h2>
       {hotelsList.map((hotel) => (
         <div className="row" key={hotel.destinationId}>
           <div className="col-sm">
