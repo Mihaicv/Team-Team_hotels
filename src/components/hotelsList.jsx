@@ -8,7 +8,7 @@ function HotelsList(props) {
   const [hotelsList, setHotelsList] = useState([]);
   const [imageSize, setImageSize] = useState(["d"]);
   let country = props.match.params.country;
-  
+
   let data = {
     headers: config.headers.headers,
     params: config.query.query,
@@ -31,37 +31,23 @@ function HotelsList(props) {
   }, [hotelsList, imageSize]);
 
   return (
-    <div>
-      <table className="table">
-        <thead>
-          <tr>
-            <th>
-              Popuplar destinations in <strong>{country}</strong>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {hotelsList.map((hotel) => (
-            <tr key={hotel.destinationId}>
-              <td>
-                <h4>Hotel</h4>
-                <Link
-                  to={`/search/${country}/${hotel.destinationId}/${hotel.name}`}
-                  {...props}
-                >
-                  <span
-                    id={hotel.destinationId}
-                    hotelName={hotel.name}
-                    {...props}
-                  >
-                    {hotel.name}
-                  </span>
-                </Link>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="container">
+      {" "}
+      Popuplar destinations in {country}
+      {hotelsList.map((hotel) => (
+        <div className="row" key={hotel.destinationId}>
+          <div className="col-sm">
+            <Link
+              to={`/search/${country}/${hotel.destinationId}/${hotel.name}`}
+              {...props}
+            >
+              <span id={hotel.destinationId} hotelName={hotel.name} {...props}>
+                {hotel.name}
+              </span>
+            </Link>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

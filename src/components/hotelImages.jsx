@@ -4,9 +4,9 @@ import config from "./common/config.json";
 import ImageComponent from "./imageComponent";
 import { useParams } from "react-router-dom";
 
-function HotelImages() {
+function HotelImages(props) {
   const [imageList, setImageList] = useState([]);
-  const [imageSize, setImageSize] = useState(["d"]);
+  const [imageSize, setImageSize] = useState(["s"]);
 
   let params = useParams();
 
@@ -32,23 +32,14 @@ function HotelImages() {
   }, [imageList, imageSize]);
 
   return (
-    <div>
-      <table className="table">
-        <thead>
-          <tr>
-            <th>Hotel</th>
-          </tr>
-        </thead>
-        <tbody>
-          {imageList.map((img) => (
-            <tr key={img.id}>
-              <td>
-                <ImageComponent url={img.url} />
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="container">
+      <div className="row">
+        {imageList.map((img) => (
+          <div className="col-sm-3" key={img.id}>
+            <ImageComponent url={img.url} {...props} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
