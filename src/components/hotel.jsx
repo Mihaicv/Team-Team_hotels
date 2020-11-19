@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import React from "react";
+import { Link, useParams } from "react-router-dom";
 
-import HotelImages from './hotelImages';
+import HotelImages from "./hotelImages";
 
 function Hotel() {
   let params = useParams();
@@ -10,7 +10,7 @@ function Hotel() {
     <div>
       <div>
         <Link to={`/detail/${params.id}`}>
-          {' '}
+          {" "}
           <h5>Details</h5>
         </Link>
       </div>

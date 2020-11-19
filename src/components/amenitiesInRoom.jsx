@@ -1,11 +1,9 @@
-/* eslint-disable array-callback-return */
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import http from './common/httpService';
-import configDetails from './common/configDetails.json';
+import React, { useEffect, useState } from "react";
+
+import http from "./common/httpService";
+import configDetails from "./common/configDetails.json";
 
 export default function AmenitiesInRoom(props) {
-  console.log(props);
   const [listAmenities, setListAmenities] = useState([]);
 
   useEffect(() => {
@@ -15,9 +13,11 @@ export default function AmenitiesInRoom(props) {
     };
 
     async function getDetail() {
-      const result = await http.get(configDetails.apiEndpoint+props.match.params.id, data);
-      let obj = result.data.data.body.amenities[0].listItems[1];
-      console.log(result.data.data.body.amenities[0].listItems[1]);
+      const result = await http.get(
+        configDetails.apiEndpoint + props.match.params.id,
+        data
+      );
+      let obj = result.data.data.body.amenities[1].listItems[0];
 
       setListAmenities(obj);
     }
@@ -27,7 +27,7 @@ export default function AmenitiesInRoom(props) {
 
   return (
     <div>
-      <table className='table'>
+      <table className="table">
         <thead>
           <tr>
             <th>Amenities {listAmenities.heading} </th>
@@ -39,7 +39,7 @@ export default function AmenitiesInRoom(props) {
             <td>
               <ul>
                 {Object.keys(listAmenities).map((key) => {
-                  if (key !== 'heading')
+                  if (key !== "heading")
                     return listAmenities[key].map((x) => <li>{x}</li>);
                 })}
               </ul>
