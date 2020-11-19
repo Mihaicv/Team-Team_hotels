@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import http from "./common/httpService";
 import config from "./common/config.json";
 import { Link } from "react-router-dom";
@@ -7,7 +8,7 @@ function HotelsList(props) {
   const [hotelsList, setHotelsList] = useState([]);
   const [imageSize, setImageSize] = useState(["d"]);
   let country = props.match.params.country;
-
+  
   let data = {
     headers: config.headers.headers,
     params: config.query.query,
@@ -34,20 +35,26 @@ function HotelsList(props) {
       <table className="table">
         <thead>
           <tr>
-            <th>Hotel</th>
+            <th>
+              Popuplar destinations in <strong>{country}</strong>
+            </th>
           </tr>
         </thead>
         <tbody>
           {hotelsList.map((hotel) => (
             <tr key={hotel.destinationId}>
               <td>
-                <h2>hotel</h2>
+                <h4>Hotel</h4>
                 <Link
-                  to={`/hotels/${props.match.params.country}/${hotel.destinationId}`}
+                  to={`/search/${country}/${hotel.destinationId}/${hotel.name}`}
                   {...props}
                 >
-                  <span id={hotel.destinationId} {...props}>
-                    Hotel - {hotel.destinationId}
+                  <span
+                    id={hotel.destinationId}
+                    hotelName={hotel.name}
+                    {...props}
+                  >
+                    {hotel.name}
                   </span>
                 </Link>
               </td>

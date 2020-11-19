@@ -9,8 +9,8 @@ function Hotel() {
   return (
     <div>
       <div>
-        <h1>Hotel Images - {params.id} </h1>
-        <HotelImages {...params.id} />
+        <h3>{params.hotelName}</h3>
+        <HotelImages {...params} />
       </div>
       <div>
         <h2>Details</h2>

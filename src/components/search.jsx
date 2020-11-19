@@ -10,7 +10,7 @@ export default function Search(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    window.location.href = `/hotels/${searchArgument}`;
+    window.location.href = `/search/${searchArgument}`;
   };
 
   return (
