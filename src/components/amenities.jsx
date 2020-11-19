@@ -27,7 +27,7 @@ export default function AmenitiesInHotel(props) {
   return (
     <div>
       <table className='table'>
-        <thead>
+        <thead className="thead-dark">
           <tr>
             <th>Amenities {listAmenities.heading} </th>
           </tr>
@@ -35,11 +35,11 @@ export default function AmenitiesInHotel(props) {
 
         <tbody>
           <tr>
-            <td>
-              <ul>
+            <td scope="row">
+              <ul className="list-group">
                 {Object.keys(listAmenities).map((key) => {
                   if (key !== 'heading')
-                    return listAmenities[key].map((x) => <li>{x}</li>);
+                    return listAmenities[key].map((x) => <li className="list-group-item">{x}</li>);
                 })}
               </ul>
             </td>

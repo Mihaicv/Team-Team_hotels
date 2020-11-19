@@ -40,7 +40,7 @@ function HotelDetails(props) {
           {detailsHotel.map((del) => (
             <tr key={del.heading}>
               <td>
-               <Link to={`/amenities/${del.heading}/${props.match.params.id}`} > <h3>{del.heading}</h3></Link>
+               <Link to={`/amenities/${del.heading.split(" ")[2]}/${props.match.params.id}`} > <h3>{del.heading}</h3></Link>
              
               </td>
             </tr>

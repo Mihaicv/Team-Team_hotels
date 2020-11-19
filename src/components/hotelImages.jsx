@@ -32,7 +32,7 @@ function HotelImages(props) {
   }, [imageList, imageSize]);
 
   return (
-    <div className="container">
+    <div className="jumbotron">
       <div className="row">
         {imageList.map((img) => (
           <div className="col-sm-3" key={img.id}>

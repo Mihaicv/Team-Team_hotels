@@ -31,9 +31,9 @@ function HotelsList(props) {
   }, [hotelsList, imageSize]);
 
   return (
-    <div className="container">
+    <div className="jumbotron">
       {" "}
-      Popuplar destinations in {country}
+      Popular destinations in {country}
       {hotelsList.map((hotel) => (
         <div className="row" key={hotel.destinationId}>
           <div className="col-sm">
@@ -41,7 +41,7 @@ function HotelsList(props) {
               to={`/search/${country}/${hotel.destinationId}/${hotel.name}`}
               {...props}
             >
-              <span id={hotel.destinationId} hotelName={hotel.name} {...props}>
+              <span className="list-group-item" id={hotel.destinationId} hotelName={hotel.name} {...props}>
                 {hotel.name}
               </span>
             </Link>

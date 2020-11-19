@@ -16,8 +16,8 @@ export default function AmenitiesInRoom(props) {
 
     async function getDetail() {
       const result = await http.get(configDetails.apiEndpoint+props.match.params.id, data);
-      let obj = result.data.data.body.amenities[0].listItems[1];
-      console.log(result.data.data.body.amenities[0].listItems[1]);
+      let obj = result.data.data.body.amenities[1].listItems[0];
+    
 
       setListAmenities(obj);
     }
@@ -28,7 +28,7 @@ export default function AmenitiesInRoom(props) {
   return (
     <div>
       <table className='table'>
-        <thead>
+        <thead className="thead-dark">
           <tr>
             <th>Amenities {listAmenities.heading} </th>
           </tr>
@@ -37,10 +37,10 @@ export default function AmenitiesInRoom(props) {
         <tbody>
           <tr>
             <td>
-              <ul>
+              <ul className="list-group">
                 {Object.keys(listAmenities).map((key) => {
                   if (key !== 'heading')
-                    return listAmenities[key].map((x) => <li>{x}</li>);
+                    return listAmenities[key].map((x) => <li className="list-group-item">{x}</li>);
                 })}
               </ul>
             </td>

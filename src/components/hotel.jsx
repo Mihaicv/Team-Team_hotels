@@ -7,7 +7,7 @@ function Hotel() {
   let params = useParams();
 
   return (
-    <div>
+    <div className="jumbotron">
       <div>
         <Link to={`/detail/${params.id}`}>
           {' '}
