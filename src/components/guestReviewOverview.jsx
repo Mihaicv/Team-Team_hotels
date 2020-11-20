@@ -26,7 +26,7 @@ const GuestReviewOverview = (props) => {
     }
 
     getReviews();
-  }, [guestReviewOverview, id]);
+  }, []);
 
   return (
     <div>

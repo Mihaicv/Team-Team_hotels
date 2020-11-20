@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
 export default function ImageComponent(props) {
   return (
     <picture>
-      <img src={props.url} alt={"Image of rooms"} />
+      <img className="standard-image" src={props.url} alt={'Image of rooms'} />
     </picture>
   );
 }

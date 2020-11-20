@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import http from "./common/httpService";
-import configDetails from "./common/configDetails.json";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import http from './common/httpService';
+import configDetails from './common/configDetails.json';
+import { Link } from 'react-router-dom';
 
 function HotelDetails(props) {
   const [detailsHotel, setDetailsHotel] = useState([]);
@@ -23,7 +23,7 @@ function HotelDetails(props) {
     }
 
     getDetailHotel();
-  }, [detailsHotel]);
+  }, []);
 
   return (
     <div>
@@ -38,7 +38,7 @@ function HotelDetails(props) {
             <tr key={del.heading}>
               <td>
                 <Link to={`/amenities/${del.heading}/${props.match.params.id}`}>
-                  {" "}
+                  {' '}
                   <h3>{del.heading}</h3>
                 </Link>
               </td>

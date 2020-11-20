@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import http from "./common/httpService";
-import config from "./common/config.json";
-import ImageComponent from "./imageComponent";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import http from './common/httpService';
+import config from './common/config.json';
+import ImageComponent from './imageComponent';
+import { useParams } from 'react-router-dom';
 
 function HotelImages(props) {
   const [imageList, setImageList] = useState([]);
-  const [imageSize, setImageSize] = useState(["s"]);
+  const [imageSize, setImageSize] = useState(['s']);
 
   let params = useParams();
 
@@ -17,7 +17,7 @@ function HotelImages(props) {
 
     async function getImageList() {
       const result = await http.get(
-        config.apiEndpoint + "/nice/image-catalog/v2/hotels/" + params.id,
+        config.apiEndpoint + '/nice/image-catalog/v2/hotels/' + params.id,
         data
       );
       let obj = await result;
@@ -29,7 +29,7 @@ function HotelImages(props) {
     }
 
     getImageList();
-  }, [imageList, imageSize]);
+  }, []);
 
   return (
     <div className="container">

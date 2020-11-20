@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import http from "./common/httpService";
-import configDetails from "./common/configDetails.json";
+import http from './common/httpService';
+import configDetails from './common/configDetails.json';
 
 export default function AmenitiesInRoom(props) {
   const [listAmenities, setListAmenities] = useState([]);
@@ -23,7 +23,7 @@ export default function AmenitiesInRoom(props) {
     }
 
     getDetail();
-  }, [listAmenities]);
+  }, []);
 
   return (
     <div>
@@ -39,7 +39,7 @@ export default function AmenitiesInRoom(props) {
             <td>
               <ul>
                 {Object.keys(listAmenities).map((key) => {
-                  if (key !== "heading")
+                  if (key !== 'heading')
                     return listAmenities[key].map((x) => <li>{x}</li>);
                 })}
               </ul>

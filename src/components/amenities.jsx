@@ -1,8 +1,8 @@
 /* eslint-disable array-callback-return */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import http from "./common/httpService";
-import configDetails from "./common/configDetails.json";
+import http from './common/httpService';
+import configDetails from './common/configDetails.json';
 
 export default function AmenitiesInHotel(props) {
   const [listAmenities, setListAmenities] = useState([]);
@@ -24,7 +24,7 @@ export default function AmenitiesInHotel(props) {
     }
 
     getDetail();
-  }, [listAmenities]);
+  }, []);
 
   return (
     <div>
@@ -40,7 +40,7 @@ export default function AmenitiesInHotel(props) {
             <td>
               <ul>
                 {Object.keys(listAmenities).map((key) => {
-                  if (key !== "heading")
+                  if (key !== 'heading')
                     return listAmenities[key].map((x) => <li>{x}</li>);
                 })}
               </ul>

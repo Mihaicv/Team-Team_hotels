@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import http from "./common/httpService";
-import config from "./common/config.json";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import http from './common/httpService';
+import config from './common/config.json';
+import { Link } from 'react-router-dom';
 
 function HotelsList(props) {
   const [hotelsList, setHotelsList] = useState([]);
-  const [imageSize, setImageSize] = useState(["d"]);
+  const [imageSize, setImageSize] = useState(['d']);
   let country = props.match.params.country;
 
   let data = {
@@ -18,7 +18,7 @@ function HotelsList(props) {
   useEffect(() => {
     async function getHotelsList() {
       const result = await http.get(
-        config.apiEndpoint + "/suggest/v1.7/json",
+        config.apiEndpoint + '/suggest/v1.7/json',
         data
       );
       let obj = await result;
@@ -27,22 +27,19 @@ function HotelsList(props) {
     }
 
     getHotelsList();
-  }, [hotelsList, imageSize]);
+  }, []);
 
   return (
     <div className="container">
-     <h3>popuplar destinations in {country}</h3>
-      
+      <h3>popuplar destinations in {country}</h3>
+
       {hotelsList.map((hotel) => (
         <div className="row" key={hotel.destinationId}>
           <div className="col-sm">
             <Link
               to={`/search/${country}/${hotel.destinationId}/${hotel.name}`}
-              {...props}
             >
-              <span id={hotel.destinationId} hotelName={hotel.name} {...props}>
-                {hotel.name}
-              </span>
+              <span>{hotel.name}</span>
             </Link>
           </div>
         </div>

@@ -1,6 +1,6 @@
-import React from "react";
-import { Link, useParams } from "react-router-dom";
-import HotelImages from "./hotelImages";
+import React from 'react';
+import { Link, useParams } from 'react-router-dom';
+import HotelImages from './hotelImages';
 
 function Hotel(props) {
   let params = useParams();
@@ -18,15 +18,15 @@ function Hotel(props) {
       <div>
         <h3>{params.hotelName}</h3>
 
-        <td>
+        <div>
           <Link to={`/ratings/${params.id}`}>Hotel ratings</Link>
-        </td>
-        <td>
+        </div>
+        <div>
           <Link to={`/reviews/${params.id}`}></Link>
-        </td>
-        <td>
+        </div>
+        <div>
           <Link to={`/detail/${params.id}`}></Link>
-        </td>
+        </div>
         <HotelImages {...params} />
       </div>
     </div>

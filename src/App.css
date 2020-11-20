@@ -5,3 +5,8 @@ body {
 #search-form {
   margin-top: 20rem;
 }
+
+.standard-image {
+  max-width: 200px;
+  max-height: 125px;
+}
